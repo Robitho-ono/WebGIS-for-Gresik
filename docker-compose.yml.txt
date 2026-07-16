@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:15-3.3 # Database dengan kemampuan spasial
+    container_name: gresik_db
+    environment:
+      POSTGRES_USER: usergis
+      POSTGRES_PASSWORD: passwordgis
+      POSTGRES_DB: gresik_data
+    ports:
+      - "5432:5432"
+
+  geoserver:
+    image: kartoza/geoserver:2.23.0 # GeoServer untuk publish peta
+    container_name: gresik_geoserver
+    environment:
+      GEOSERVER_ADMIN_PASSWORD: geoserverpassword
+      STABLE_EXTENSIONS: "wps,control-flow"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

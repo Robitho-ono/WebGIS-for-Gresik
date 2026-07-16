@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Geoportal Gresik 2024</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+
+    <div id="sidebar">
+        <h1>Gresik Geoportal</h1>
+        <p>Analisis Spasial 2024</p>
+        <hr>
+        
+        <div id="info-panel">
+            <b>Informasi Objek:</b>
+            <p id="info-text">Klik area atau titik pada peta untuk melihat detail informasi geografisnya di sini.</p>
+        </div>
+
+        <hr>
+        <p style="font-size: 12px; color: #555;">Gunakan kontrol peta di pojok kanan atas untuk menyalakan layer Administrasi, Morfologi, dll.</p>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="webgis.js"></script>
+
+</body>
+</html>
