@@ -35,16 +35,33 @@ const overlayMaps = {
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
 
-/* ====================================================================
-BAGIAN INI ADALAH CONTOH CARA MEMANGGIL DATA GEOJSON NANTINYA
-(Kodenya saya matikan dulu agar tidak error karena filenya belum ada)
-====================================================================
+// BAGIAN MEMANGGIL DATA GEOJSON 
 
-fetch('administrasi_gresik.geojson')
+fetch('Admin_perDesa_RBI.geojson')
     .then(response => response.json())
     .then(data => {
         L.geoJSON(data, {
             style: { color: "blue", weight: 2 }
         }).addTo(administrasiLayer);
     });
-*/
+fetch('Demografi_P_2025.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: { color: "green", weight: 2 }
+        }).addTo(demografiLayer);
+    });
+fetch('Kepadatan_P_2025.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: { color: "orange", weight: 2 }
+        }).addTo(kepadatanPendudukLayer);
+    });         
+fetch('SexRasio_P_2025.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: { color: "purple", weight: 2 }
+        }).addTo(sexRatioLayer);
+    });
